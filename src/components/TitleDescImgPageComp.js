@@ -3,6 +3,7 @@ import React from 'react';
 
 
 const TitleDescImgPageComp = ({imgSrc}) => {
+
   const title = 'TitleDescImgPage'
   const desc = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cupiditate quas officiis sunt fugiat, tempore voluptatibus totam, earum veniam qui alias possimus ea ipsum ducimus, libero dicta reprehenderit dolores cum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cupiditate quas officiis sunt fugiat, tempore voluptatibus totam, earum veniam qui alias possimus ea ipsum ducimus, libero dicta reprehenderit dolores cum? '
   const style = {
@@ -10,9 +11,13 @@ const TitleDescImgPageComp = ({imgSrc}) => {
     'height': '100%',
     'padding': `10% 5%`,
     'backgroundColor':'rgba(0,0,0,.5)',
+    'backgroundPosition':'50% 50%',
     'backgroundSize':'cover',
-    'backgroundImage': `url(${imgSrc})`,
     'boxSizing' : 'border-box'
+  }
+  const lazyStyle = {
+    'backgroundImage': `url(${imgSrc})`,
+    ...style
   }
   
   const titleStyle = {
@@ -26,7 +31,7 @@ const TitleDescImgPageComp = ({imgSrc}) => {
     lineHeight: '30px'
   }
   return (
-    <div style={style}>
+    <div style={{...style,...lazyStyle}}>
       <h2 style={titleStyle}>{title}</h2>
       <p style={descStyle}>{desc}</p>
     </div>

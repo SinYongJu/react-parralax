@@ -1,14 +1,13 @@
 import React from 'react';
 
-const ParralaxTemplate = ({page1,page2,page3,page4,page5}) => {
+const ParralaxTemplate = ({header,pages}) => {
   return (
+    <>
+    {header}
     <div className="contents">
-      {page1}
-      {page2}
-      {page3}
-      {page4}
-      {page5}
+      {pages}
     </div>
+    </>
   );
 };
 

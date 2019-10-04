@@ -1,20 +1,24 @@
 import React from 'react';
-
-const style = {
-  width : '100%',
-  padding : '20px 0',
-  backgroundColor : '#fff'
-}
-const h1Style={
-  fontSize : 48,
-  lineHeight: '50px'
-}
+import './Header.scss'
 
 const Header = () => {
-  const title = 'PARRALAX'
+  const title = 'PARRALAX'  
+
+  const pageList = document.querySelectorAll('.page');
+  const clickHandler = (e)  => {
+    console.log(pageList[e.currentTarget.dataset['id']])
+  }
   return (
-  <header style={style}>
-    <h1 style={h1Style}>{title}</h1>
+  <header >
+    <h1>{title}</h1>
+    <nav>
+      <ul>
+        <li><button onClick={clickHandler} data-id={0}>page1</button></li>
+        <li><button onClick={clickHandler} data-id={1} >page2</button></li>
+        <li><button onClick={clickHandler} data-id={2} >page3</button></li>
+        <li><button onClick={clickHandler} data-id={3} >page4</button></li>
+      </ul>
+    </nav>
   </header>
   );
 };
